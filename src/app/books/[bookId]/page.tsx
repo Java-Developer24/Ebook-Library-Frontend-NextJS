@@ -10,7 +10,10 @@ const SingleBookPage = async ({params}:{params:{bookId:string}}) => {
      const response=await fetch(`${process.env.BACKEND_URL}/books/${params.bookId}`,{headers:{
         "Content-Type": "application/json",
         "Accept": "application/json",
-     }})
+     },
+    next:{
+      revalidate:3600,
+    }})
      console.log(`${process.env.BACKEND_URL}/books/${params.bookId}`);
      console.log("Book ID from params:", params.bookId);
 

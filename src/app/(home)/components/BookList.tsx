@@ -21,7 +21,11 @@ const BookList = async() => {
         "Content-Type": "application/json",
         "Accept": "application/json",
       },
-    });
+      cache:"no-store",
+    },
+    
+      
+    );
     
     if (!response.ok) {
       throw new Error("An error occurred while fetching the books");
